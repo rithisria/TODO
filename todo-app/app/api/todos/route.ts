@@ -8,6 +8,7 @@ export async function GET() {
     const todos = await Todo.find({}).sort({ createdAt: -1 });
     return NextResponse.json(todos);
   } catch (error: any) {
+    console.error('[API /api/todos GET] Error:', error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }

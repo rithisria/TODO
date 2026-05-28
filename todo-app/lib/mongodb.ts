@@ -1,4 +1,12 @@
 import mongoose from 'mongoose';
+import dns from 'dns';
+
+// Ensure Node uses Google DNS for SRV lookups (fixes ECONNREFUSED/querySrv errors)
+try {
+  dns.setServers(['8.8.8.8', '8.8.4.4']);
+} catch (err) {
+  console.warn('Failed to set DNS servers:', err);
+}
 
 const MONGODB_URI = process.env.MONGODB_URI;
 
