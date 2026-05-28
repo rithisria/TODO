@@ -7,6 +7,7 @@ import { TodoItem } from './TodoItem';
 interface TodoListProps {
   todos: ITodo[];
   onToggle: (id: string, completed: boolean) => void;
+  
   onDelete: (id: string) => void;
   onUpdate: (id: string, updates: Partial<ITodo>) => Promise<any>;
 }
