@@ -11,6 +11,8 @@ export default function Home() {
     try {
       await updateTodo(id, { completed });
     } catch (err) {
+
+      
       console.error('Failed to toggle completion status', err);
     }
   };
